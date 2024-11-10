@@ -1,0 +1,56 @@
+body{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+.principalView{
+    background: #252020;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 60px auto auto 200px;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-areas: 
+    "head head head"
+    "main main  aside"
+    "main  main section"
+    "footer footer footer"
+    ;
+}
+.header{
+    grid-area: head;
+    background: #fff;
+}
+.main{
+    grid-area: main;
+    background: rgb(117, 33, 33);
+}
+.aside{
+    grid-area: aside;
+    background: blue;
+}
+.section{
+    grid-area: section;
+    background: green;
+}
+.footer{
+    grid-area: footer;
+    background: skyblue;
+}
+@media screen and (max-width:720px) {
+    .principalView{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "head head head"
+        "main main  main"
+        "aside aside aside"
+        "section section section"
+        "footer footer footer"
+        ;
+    }
+}
